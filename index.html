@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Configuration du document et chargement des ressources externes -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Le Jardin Étoilé | Commander en ligne</title>
+</head>
+<body>
+    <!-- Navigation principale : ancres internes et acces rapide au panier -->
+    <nav>
+        <div class="brand">
+            <span class="brand-mark">LR</span>
+            <span class="brand-name">La_Restoracion🍽️</span>
+        </div>
+
+        <ul>
+            <li><a href="#accueil"><i class='bx bx-home'></i>Accueil</a></li>
+            <li><a href="#signature"><i class='bx bx-star'></i>Nos plats signature</a></li>
+            <li><a href="#carte"><i class='bx bx-food-menu'></i>La carte</a></li>
+            <li><a href="#about"><i class='bx bx-info-circle'></i>À propos</a></li>
+            <li><a href="tel:+22812345678"><i class='bx bx-phone'></i>Appeler</a></li>
+        </ul>
+
+        <button class="nav-btn cart-toggle" type="button" aria-label="Afficher le panier">
+            <i class='bx bx-shopping-bag'></i>
+            <span class="cart-count" style="display:none;">0</span>
+        </button>
+    </nav>
+
+    <!-- Version commande en ligne du site -->
+    <main>
+        <!-- Presentation du restaurant et boutons d'action principaux -->
+        <section class="hero" id="accueil">
+            <div class="hero-copy">
+                <p class="eyebrow">Commande • Livraison • Qualité</p>
+                <h1>Commandez en ligne, dégustez à domicile.</h1>
+                <p class="lead">
+                    Nos plats préparés avec des produits frais livrés directement chez vous. Sélectionnez, commandez, recevez. C'est aussi simple.
+                </p>
+
+                <div class="cta-group">
+                    <a href="#menu" class="btn btn-primary">Voir le menu</a>
+                    <a href="tel:+22812345678" class="btn btn-secondary">Appeler</a>
+                    <a href="#location" class="btn btn-secondary">
+                        <i class='bx bx-map'></i> Nous trouver
+                    </a>
+                </div>
+
+                <div class="stats">
+                    <div>
+                        <strong>30 min</strong>
+                        <span>Livraison rapide</span>
+                    </div>
+                    <div>
+                        <strong>4.9/5</strong>
+                        <span>Très satisfait</span>
+                    </div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>Frais garanti</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="feature-card feature-main">
+                    <span class="badge">Populaire</span>
+                    <h3>Filet de saumon</h3>
+                    <p>Citron, herbes et beurre blanc</p>
+                </div>
+                <div class="feature-card feature-mini">
+                    <p>Livraison</p>
+                    <strong>30-40 min</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalogue des plats et panier gere par Doug.js -->
+        <section class="menu" id="menu">
+            <div class="section-head">
+                <p class="eyebrow">Le menu</p>
+                <h2>Sélectionnez vos plats préférés</h2>
+            </div>
+
+            <div class="order-container">
+                <div class="menu-items">
+                    <!-- Entrées -->
+                    <div class="menu-category">
+                        <h3>Entrées</h3>
+                        <div class="items-grid">
+                            <div class="menu-item" data-name="Carpaccio de bœuf" data-price="10500">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Carpaccio de bœuf</strong>
+                                        <small>Citron, huile d'olive, parmesan</small>
+                                    </div>
+                                    <strong class="price">10 500 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Carpaccio de bœuf" data-price="10500">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+
+                            <div class="menu-item" data-name="Soupe du jour" data-price="7900">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Soupe du jour</strong>
+                                        <small>Potiron, crème et épices douces</small>
+                                    </div>
+                                    <strong class="price">7 900 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Soupe du jour" data-price="7900">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+
+                            <div class="menu-item" data-name="Bruschetta gourmande" data-price="9200">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Bruschetta gourmande</strong>
+                                        <small>Tomates, basilic, mozzarella</small>
+                                    </div>
+                                    <strong class="price">9 200 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Bruschetta gourmande" data-price="9200">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plats principaux -->
+                    <div class="menu-category">
+                        <h3>Plats principaux</h3>
+                        <div class="items-grid">
+                            <div class="menu-item" data-name="Risotto aux champignons" data-price="14450">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Risotto aux champignons</strong>
+                                        <small>Parmesan, échalotes et herbes</small>
+                                    </div>
+                                    <strong class="price">14 450 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Risotto aux champignons" data-price="14450">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+
+                            <div class="menu-item" data-name="Filet de bœuf" data-price="20350">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Filet de bœuf</strong>
+                                        <small>Pommes de terre fondantes, jus maison</small>
+                                    </div>
+                                    <strong class="price">20 350 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Filet de bœuf" data-price="20350">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+
+                            <div class="menu-item" data-name="Saumon grillé" data-price="18350">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Saumon grillé</strong>
+                                        <small>Velouté de légumes, agrumes et beurre citronné</small>
+                                    </div>
+                                    <strong class="price">18 350 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Saumon grillé" data-price="18350">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+
+                            <div class="menu-item" data-name="Poulet rôti" data-price="15750">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Poulet rôti</strong>
+                                        <small>Purée, légumes grillés, jus parfumé</small>
+                                    </div>
+                                    <strong class="price">15 750 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Poulet rôti" data-price="15750">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desserts -->
+                    <div class="menu-category">
+                        <h3>Desserts</h3>
+                        <div class="items-grid">
+                            <div class="menu-item" data-name="Crème brûlée" data-price="6550">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Crème brûlée</strong>
+                                        <small>Vanille bourbon, caramel croustillant</small>
+                                    </div>
+                                    <strong class="price">6 550 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Crème brûlée" data-price="6550">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+
+                            <div class="menu-item" data-name="Gâteau chocolat" data-price="7200">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Gâteau chocolat</strong>
+                                        <small>Ganache chaude et noisette</small>
+                                    </div>
+                                    <strong class="price">7 200 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Gâteau chocolat" data-price="7200">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+
+                            <div class="menu-item" data-name="Tarte citron" data-price="7900">
+                                <div class="item-header">
+                                    <div>
+                                        <strong>Tarte citron</strong>
+                                        <small>Crème légère, zeste, meringue et fruits frais</small>
+                                    </div>
+                                    <strong class="price">7 900 FCFA</strong>
+                                </div>
+                                <button class="add-to-cart" data-name="Tarte citron" data-price="7900">
+                                    <i class='bx bx-plus'></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panier latéral -->
+                <div class="cart-sidebar">
+                    <div class="cart-header">
+                        <h3>Votre panier</h3>
+                        <button class="close-cart" style="display:none;">
+                            <i class='bx bx-x'></i>
+                        </button>
+                    </div>
+
+                    <div class="cart-items" id="cartItems">
+                        <p class="empty-cart">Le panier est vide</p>
+                    </div>
+
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <strong>Total:</strong>
+                            <strong id="cartTotal">0 FCFA</strong>
+                        </div>
+
+                        <form class="checkout-form" id="checkoutForm" style="display:none;">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Téléphone" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="address" placeholder="Adresse de livraison" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="notes" placeholder="Notes spéciales (optionnel)" rows="2"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width:100%;">
+                                <i class='bx bxl-whatsapp'></i> Commander
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Informations generales sur le service de livraison -->
+        <section class="about" id="about">
+            <div class="about-image"></div>
+            <div class="about-copy">
+                <p class="eyebrow">Livraison à domicile</p>
+                <h2>Commande simple, livraison garantie.</h2>
+                <p>
+                    Sélectionnez vos plats, remplissez vos coordonnées et confirmez. Nous préparons votre commande avec soin et vous la livrons en 30 à 40 minutes maximum.
+                </p>
+                <ul>
+                    <li>Produits frais garantis</li>
+                    <li>Livraison rapide et fiable</li>
+                    <li>Commande 100% sécurisée</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Seconde version du site : menu classique et reservation de table -->
+    <main>
+        <section class="hero" id="accueil">
+            <div class="hero-copy">
+                <p class="eyebrow">Cuisine de saison • Ambiance chaleureuse</p>
+                <h1>Une table qui fait voyager.</h1>
+                <p class="lead">
+                    Du chef au dessert, chaque plat est préparé avec des produits frais, des saveurs généreuses et une touche élégante inspirée des cuisines du monde.
+                </p>
+
+                <div class="cta-group">
+                    <a href="#menu" class="btn btn-primary">Voir le menu</a>
+                    <a href="#reservation" class="btn btn-secondary">Réserver une table</a>
+                </div>
+
+                <div class="stats">
+                    <div>
+                        <strong>12+</strong>
+                        <span>ans d'excellence</span>
+                    </div>
+                    <div>
+                        <strong>4.9/5</strong>
+                        <span>avis clients</span>
+                    </div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>produits frais</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="feature-card feature-main">
+                    <span class="badge">Spécial du chef</span>
+                    <h3>Filet de saumon</h3>
+                    <p>Citron, herbes et beurre blanc</p>
+                </div>
+                <div class="feature-card feature-mini">
+                    <p>Du jour</p>
+                    <strong>Pâtes truffées</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="specials" id="signature">
+            <div class="section-head">
+                <p class="eyebrow">Les incontournables</p>
+                <h2>Nos plats signature</h2>
+            </div>
+
+            <div class="special-grid">
+                <article class="dish-card dish-one">
+                    <div class="dish-content">
+                        <span class="dish-tag">Signature</span>
+                        <h3>Pâtes truffées</h3>
+                        <p>Parmesan, truffe noire, crème légère et basilic frais.</p>
+                        <strong>15 750 FCFA</strong>
+                    </div>
+                </article>
+
+                <article class="dish-card dish-two">
+                    <div class="dish-content">
+                        <span class="dish-tag">Méditerranée</span>
+                        <h3>Saumon grillé</h3>
+                        <p>Velouté de légumes, agrumes et beurre citronné.</p>
+                        <strong>18 350 FCFA</strong>
+                    </div>
+                </article>
+
+                <article class="dish-card dish-three">
+                    <div class="dish-content">
+                        <span class="dish-tag">Dessert</span>
+                        <h3>Tarte citron</h3>
+                        <p>Crème légère, zeste, meringue et fruits frais.</p>
+                        <strong>7 900 FCFA</strong>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="menu" id="carte">
+            <div class="section-head">
+                <p class="eyebrow">Le menu</p>
+                <h2>Des saveurs pour chaque envie</h2>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-column">
+                    <div class="menu-card">
+                        <div class="menu-header">
+                            <h3>Entrées</h3>
+                            <span>À partager</span>
+                        </div>
+                        <ul>
+                            <li><div><strong>Carpaccio de bœuf</strong><small>Citron, huile d'olive, parmesan</small></div><span>10 500 FCFA</span></li>
+                            <li><div><strong>Soupe du jour</strong><small>Potiron, crème et épices douces</small></div><span>7 900 FCFA</span></li>
+                            <li><div><strong>Bruschetta gourmande</strong><small>Tomates, basilic, mozzarella</small></div><span>9 200 FCFA</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="menu-column">
+                    <div class="menu-card">
+                        <div class="menu-header">
+                            <h3>Plats</h3>
+                            <span>Signature</span>
+                        </div>
+                        <ul>
+                            <li><div><strong>Risotto aux champignons</strong><small>Parmesan, échalotes et herbes</small></div><span>14 450 FCFA</span></li>
+                            <li><div><strong>Filet de bœuf</strong><small>Pommes de terre fondantes, jus maison</small></div><span>20 350 FCFA</span></li>
+                            <li><div><strong>Poulet rôti</strong><small>Purée, légumes grillés, jus parfumé</small></div><span>15 750 FCFA</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="menu-column">
+                    <div class="menu-card">
+                        <div class="menu-header">
+                            <h3>Desserts</h3>
+                            <span>Douceur</span>
+                        </div>
+                        <ul>
+                            <li><div><strong>Crème brûlée</strong><small>Vanille bourbon, caramel croustillant</small></div><span>6 550 FCFA</span></li>
+                            <li><div><strong>Gâteau chocolat</strong><small>Ganache chaude et noisette</small></div><span>7 200 FCFA</span></li>
+                            <li><div><strong>Affogato</strong><small>Glace vanille, espresso fort</small></div><span>5 900 FCFA</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-image"></div>
+            <div class="about-copy">
+                <p class="eyebrow">Notre histoire</p>
+                <h2>Un lieu pensé pour les grands repas et les bons moments.</h2>
+                <p>
+                    Chez La_Restoracion, on aime les tables longues, les conversations animées et les plats qui restent dans les souvenirs. Notre équipe prépare chaque assiette avec soin, dans une ambiance à la fois élégante et conviviale.
+                </p>
+                <ul>
+                    <li>Produits frais et de saison</li>
+                    <li>Service attentionné et chaleureux</li>
+                    <li>Ambiance intime et conviviale</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="reservation" id="reservation">
+            <div class="section-head">
+                <p class="eyebrow">Réservation</p>
+                <h2>Réservez votre table dès maintenant</h2>
+            </div>
+
+            <form class="reservation-form" id="reservationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Heure</label>
+                        <input type="time" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nombre de personnes</label>
+                        <input type="number" name="guests" min="1" max="20" value="2" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Votre nom</label>
+                        <input type="text" name="name" placeholder="Nom complet" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Téléphone</label>
+                        <input type="tel" name="phone" placeholder="+228 ..." required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Intérieur ou Extérieur?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="location" value="Intérieur" required>
+                                <span>🏠 Intérieur</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="location" value="Extérieur" required>
+                                <span>🌳 Extérieur</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Préférence de vue</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="window" value="Oui, près de la fenêtre" required>
+                                <span>🪟 Près de la fenêtre</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="window" value="Non, intérieur cosy" required>
+                                <span>☺️ Intérieur cosy</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row full-width">
+                    <div class="form-group">
+                        <label>Demandes spéciales</label>
+                        <textarea name="notes" placeholder="Ex: Occasion spéciale, régime..." rows="2"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top: 1rem;">
+                    <i class='bx bxl-whatsapp'></i> Réserver via WhatsApp
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Section de localisation : adresse du restaurant et carte intégrée -->
+    <section class="location" id="location">
+        <div>
+            <!-- Informations affichées à gauche de la carte -->
+            <p class="eyebrow">Nous trouver</p>
+            <h2>La_Restoracion</h2>
+            <p>12 rue des Lumières, Paris</p>
+        </div>
+
+        <!-- Google Maps fournit la carte directement dans cette iframe -->
+        <iframe
+            src="https://www.google.com/maps?q=12+rue+des+Lumières,+Paris&output=embed"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+    </section>
+
+    <footer id="contact">
+        <div>
+            <strong>La_Restoracion</strong>
+            <p>12 rue des Lumières, Paris</p>
+        </div>
+        <div>
+            <p>Ouvert tous les jours</p>
+            <p>12:00 - 14:30 • 19:00 - 22:30</p>
+        </div>
+        <a href="mailto:contact@la_restoracion.com">contact@la_restoracion.com</a>
+    </footer>
+
+    <!-- Logique interactive du panier et du formulaire de commande -->
+    <script src="script.js"></script>
+</body>
+</html>
